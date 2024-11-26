@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo
+    container_name: HotelRoom
+    ports:
+      - "27017:27017"
+    networks:
+      - hotel-network
+
+  node-app:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: api-testing-js-app
+    ports:
+      - "3000:3000"
+    networks:
+      - hotel-network
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/HotelRoom
+
+networks:
+  hotel-network:
+    driver: bridge

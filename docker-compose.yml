@@ -18,7 +18,7 @@ services:
     networks:
       - hotel-network
     environment:
-      - MONGO_URI=mongodb://mongodb:27017/HotelRoom
+      - MONGO_URI=mongodb+srv://fabien:-Fa53}Tu06@cluster0.cka2y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
 networks:
   hotel-network:
